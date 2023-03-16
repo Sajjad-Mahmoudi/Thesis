@@ -15,5 +15,5 @@ module load wandb/0.12.16-GCCcore-11.2.0
 module load tensorflow_addons/0.15.0-foss-2021b-CUDA-11.4.1
 
 
-python light_test.py
+python Hydra_withAug_WandB.py
 
