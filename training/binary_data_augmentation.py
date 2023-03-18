@@ -59,7 +59,7 @@ valid_mask_generator = mask_data_generator.flow(y_valid, seed=seed, batch_size=b
 '''
 # generators for images and labels
 seed = 24
-batch_size = 1
+batch_size = 8
 data_generator = ImageDataGenerator(**generator_args)
 train_img_generator = data_generator.flow(x_train, seed=seed, batch_size=batch_size)
 train_mask_generator = data_generator.flow(y_train, seed=seed, batch_size=batch_size)
@@ -84,7 +84,6 @@ valid_augmented = merge_generator(valid_img_generator, valid_mask_generator)
 
 # sanity check
 x1 = train_img_generator.next()
-
 y1 = train_mask_generator.next()
 x2 = valid_img_generator.next()
 y2 = valid_mask_generator.next()
@@ -102,7 +101,7 @@ multiple_images([x2[0], y2[0]], ['image', 'mask'])
 #     plt.show()
 
 
-# illustrate how each transformation impacts the original image
+# Illustrate how each transformation with/without reflection impacts the original image 
 seed = 24
 batch_size = 1
 individual_transform_gen = ImageDataGenerator(width_shift_range=0.3).flow(x_train, seed=seed, batch_size=batch_size)
@@ -116,12 +115,3 @@ transformed_image_with_reflect = individual_transform_gen_with_reflect.next()
 multiple_images([org_image[0], transformed_image[0], transformed_image_with_reflect[0]],
                 ['Original Image', 'Transformed Image', 'Transformed Image with Reflect'],
                 'Width shift range')
-
-generator_args = dict(rotation_range=90,
-                      width_shift_range=0.3,
-                      height_shift_range=0.3,
-                      shear_range=0.5,
-                      zoom_range=0.3,
-                      horizontal_flip=True,
-                      vertical_flip=True,
-                      fill_mode='reflect')
