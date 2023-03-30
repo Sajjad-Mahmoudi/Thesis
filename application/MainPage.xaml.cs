@@ -139,7 +139,8 @@ namespace BinarySeg
 
             isBusy = false;
         }
-
+        
+        // Convert Softwarebitmap to TensorFloat
         private unsafe TensorFloat PreprocessImage(SoftwareBitmap image)
         {
             // In BGRA8 format, each pixel is defined by 4 bytes
