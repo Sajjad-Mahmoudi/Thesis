@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="BinarySeg.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BinarySeg"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="700*"/>
+            <RowDefinition Height="250*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.3*"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image Grid.Column="0" x:Name="sourceImageWindow" Stretch="None" HorizontalAlignment="Center" Margin="0,0,0,0" />
+        <Image Grid.Column="1" x:Name="labelImageWindow" Stretch="None" HorizontalAlignment="Center" Margin="0,0,0,0" />
+        <Image Grid.Column="2" x:Name="resultImageWindow" Stretch="None" HorizontalAlignment="Center" Margin="0,0,0,0" />
+
+        <TextBlock Grid.Column="0" HorizontalAlignment="Center" Margin="0,-350,0,0" Text="Original Image" TextWrapping="Wrap" Height="36" Width="186" TextAlignment="Center"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Center" Margin="0,-350,0,0" Text="Ground Truth" TextWrapping="Wrap" Height="36" Width="186" TextAlignment="Center"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="Center" Margin="0,-350,0,0" Text="Prediction" TextWrapping="Wrap" Height="36" Width="186" TextAlignment="Center"/>
+        <TextBlock x:Name="TimeSpanTextBox" HorizontalAlignment="Center" Margin="80,350,0,0" TextWrapping="Wrap" Height="49" Width="244" Grid.Column="2"/>
+        <TextBlock x:Name="TotalTimeSpanTextBox" HorizontalAlignment="Center" Margin="80,400,0,0" TextWrapping="Wrap" Height="49" Width="244" Grid.Column="2"/>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,4,0,4" Grid.Column="1">
+            <Button Content="Select Folder" Padding="128,32" Click="UpdateFromFolderCallback" RenderTransformOrigin="0.483,1.259"/>
+        </StackPanel>
+    </Grid>
+</Page>
