@@ -182,7 +182,8 @@ namespace BinarySeg
             TensorFloat input = TensorFloat.CreateFromArray(new long[] { 1, 256, 256, 1 }, floatArray.Cast<float>().ToArray());
             return input;
         }
-
+        
+        // Bind input, evaluate model, and bind output to the model
         private async Task<modelOutput> InferenceAsync(TensorFloat image)
         {
             //Bind the preprocessed input to the model
