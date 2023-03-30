@@ -193,7 +193,8 @@ namespace BinarySeg
             modelOutput = await modelGen.EvaluateAsync(modelInput);
             return modelOutput;
         }
-
+        
+        // Binarize the prediction and convert it to SoftwareBitmap
         private async Task<SoftwareBitmap> PostProcess(modelOutput modelOutput)
         {
             var pixels = modelOutput.conv2d_18
