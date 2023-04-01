@@ -41,5 +41,7 @@
             <!-- Button for selecting a folder -->
             <Button Content="Select Folder" Padding="128,32" Click="UpdateFromFolderCallback" RenderTransformOrigin="0.483,1.259"/>
         </StackPanel>
+        
     </Grid>
+    
 </Page>
