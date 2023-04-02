@@ -123,7 +123,7 @@ def dice_metric(y_pred, y_true):
 
 configs = dict(
     batch_size = 16,
-	augmentation = 'False',
+    augmentation = 'False',
     epochs = 400,
     lr = 0.001,
     opt = 'Adam',
@@ -134,7 +134,7 @@ configs = dict(
     framework = 'tensorflow',
     patch_step = 256,
     patch_size = '256x256',
-	)
+    )
 
 id = wandb.util.generate_id()
 run = wandb.init(project='Binary_Seg', name='Run_Remote4', id=id, config=configs, save_code=True)
